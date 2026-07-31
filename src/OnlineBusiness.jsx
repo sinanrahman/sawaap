@@ -21,12 +21,27 @@ const BackgroundOrbital = ({ position = 'right' }) => {
           <div className="absolute inset-0 rounded-full border border-[#29CD71]/20"></div>
           <div className="absolute inset-4 rounded-full border border-[#29CD71]/10 border-dashed"></div>
 
-          {/* Orbiting Icon */}
+          {/* Orbiting Icons */}
           <div className="absolute inset-0 animate-spin-slow">
-            <div className="absolute top-[-16px] left-1/2 -translate-x-1/2 w-8 h-8 bg-[#B269EC]/10 backdrop-blur-sm border border-[#B269EC]/30 rounded-full flex items-center justify-center text-[#B269EC] shadow-[0_0_15px_rgba(178,105,236,0.5)]">
+            {/* Folder Icon (Top - 0deg) */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-[#B269EC]/10 backdrop-blur-sm border border-[#B269EC]/30 rounded-full flex items-center justify-center text-[#B269EC] shadow-[0_0_15px_rgba(178,105,236,0.5)]">
+              <iconify-icon icon="solar:folder-linear" width="16"></iconify-icon>
+            </div>
+            
+            {/* Search Icon (Right - 90deg) */}
+            <div className="absolute top-1/2 left-full -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-[#B269EC]/10 backdrop-blur-sm border border-[#B269EC]/30 rounded-full flex items-center justify-center text-[#B269EC] shadow-[0_0_15px_rgba(178,105,236,0.5)]">
+              <iconify-icon icon="solar:magnifer-linear" width="16"></iconify-icon>
+            </div>
+            
+            {/* Save Icon (Bottom - 180deg) */}
+            <div className="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-[#B269EC]/10 backdrop-blur-sm border border-[#B269EC]/30 rounded-full flex items-center justify-center text-[#B269EC] shadow-[0_0_15px_rgba(178,105,236,0.5)]">
               <iconify-icon icon="solar:bookmark-linear" width="16"></iconify-icon>
             </div>
-            <div className="absolute bottom-[20%] right-[10%] w-2 h-2 bg-[#29CD71]/50 rounded-full shadow-[0_0_8px_#29CD71]"></div>
+
+            {/* Mark/Forward Icon (Left - 270deg) */}
+            <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-[#B269EC]/10 backdrop-blur-sm border border-[#B269EC]/30 rounded-full flex items-center justify-center text-[#B269EC] shadow-[0_0_15px_rgba(178,105,236,0.5)]">
+              <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+            </div>
           </div>
         </div>
       </div>
