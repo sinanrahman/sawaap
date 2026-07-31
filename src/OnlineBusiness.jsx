@@ -71,27 +71,27 @@ export default function OnlineBusiness() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
             <img src="/logo.png" alt="SawAap Logo" className="w-8 h-8 object-contain" />
-            <span className="font-sans text-sm tracking-widest font-medium  text-[#111827]">SawAap</span>
+            <span className="font-sans text-sm tracking-widest font-medium  text-[#1A1A1A]">SawAap</span>
           </a>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-6">
-            <a href="#sell" className="text-xs font-medium uppercase tracking-wide text-[#0F172A] hover:text-[#29CD71] transition-colors">Home</a>
-            <a href="#readiness" className="text-xs font-medium uppercase tracking-wide text-[#0F172A] hover:text-[#29CD71] transition-colors">Features</a>
-            <a href="#how-it-works" className="text-xs font-medium uppercase tracking-wide text-[#0F172A] hover:text-[#29CD71] transition-colors">How It Works</a>
-            <a href="#buyers" className="text-xs font-medium uppercase tracking-wide text-[#0F172A] hover:text-[#29CD71] transition-colors">About</a>
-            <a href="#resources" className="text-xs font-medium uppercase tracking-wide text-[#0F172A] hover:text-[#29CD71] transition-colors">Blog</a>
-            <a href="#resources" className="text-xs font-medium uppercase tracking-wide text-[#0F172A] hover:text-[#29CD71] transition-colors">FAQ</a>
+            <a href="#sell" className="text-xs font-medium uppercase tracking-wide text-[#1A1A1A] hover:text-[#29CD71] transition-colors">Home</a>
+            <a href="#readiness" className="text-xs font-medium uppercase tracking-wide text-[#1A1A1A] hover:text-[#29CD71] transition-colors">Features</a>
+            <a href="#how-it-works" className="text-xs font-medium uppercase tracking-wide text-[#1A1A1A] hover:text-[#29CD71] transition-colors">How It Works</a>
+            <a href="#buyers" className="text-xs font-medium uppercase tracking-wide text-[#1A1A1A] hover:text-[#29CD71] transition-colors">About</a>
+            <a href="#resources" className="text-xs font-medium uppercase tracking-wide text-[#1A1A1A] hover:text-[#29CD71] transition-colors">Blog</a>
+            <a href="#resources" className="text-xs font-medium uppercase tracking-wide text-[#1A1A1A] hover:text-[#29CD71] transition-colors">FAQ</a>
           </div>
 
           {/* CTA */}
-          <a href="#login" className="hidden md:flex items-center gap-2 bg-[#111827] hover:bg-[#29CD71] text-white px-5 py-2 rounded-full text-xs font-medium transition-all transform hover:scale-105">
+          <a href="#login" className="hidden md:flex items-center gap-2 bg-[#1A1A1A] hover:bg-[#29CD71] text-white px-5 py-2 rounded-full text-xs font-medium transition-all transform hover:scale-105">
             <span>Login</span>
             <iconify-icon icon="solar:login-2-linear"></iconify-icon>
           </a>
 
           {/* Mobile Menu */}
-          <button className="md:hidden text-[#111827]">
+          <button className="md:hidden text-[#1A1A1A]">
             <iconify-icon icon="solar:hamburger-menu-linear" width="24"></iconify-icon>
           </button>
         </div>
@@ -110,28 +110,28 @@ export default function OnlineBusiness() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Column: Text */}
             <div className="text-left animate-fade-in-up">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200 text-[#111827] text-xs font-medium mb-8 shadow-sm">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200 text-[#1A1A1A] text-xs font-medium mb-8 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-[#29CD71]"></span>
                 <span>India's First AI Powered 100% Secure</span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-[#111827] mb-8 leading-[1.05]">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-[#1A1A1A] mb-8 leading-[1.05]">
                 Forward. <br />
                 <span className="italic font-light text-[#29CD71]">Save.</span>
                 <br />
                 <span className="italic font-light text-[#29CD71]">Get it.</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-[#0F172A]/70 max-w-lg mb-10 leading-relaxed font-light">
+              <p className="text-lg md:text-xl text-[#1A1A1A]/70 max-w-lg mb-10 leading-relaxed font-light">
                 The smarter way to forward, save and find WhatsApp files instantly with AI.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-start gap-4 mb-8">
-                <a href="#readiness" className="w-full sm:w-auto px-8 py-4 bg-[#111827] text-white rounded-full font-medium transition-all hover:bg-[#29CD71] hover:shadow-lg flex items-center justify-center gap-2">
+                <a href="#readiness" className="w-full sm:w-auto px-8 py-4 bg-[#1A1A1A] text-white rounded-full font-medium transition-all hover:bg-[#29CD71] hover:shadow-lg flex items-center justify-center gap-2">
                   Chat with us
                   <iconify-icon icon="solar:chat-round-line-linear"></iconify-icon>
                 </a>
-                <a href="#sell" className="w-full sm:w-auto px-8 py-4 bg-white text-[#111827] border border-gray-200 rounded-full font-medium transition-all hover:bg-gray-50 flex items-center justify-center gap-2">
+                <a href="#sell" className="w-full sm:w-auto px-8 py-4 bg-white text-[#1A1A1A] border border-gray-200 rounded-full font-medium transition-all hover:bg-gray-50 flex items-center justify-center gap-2">
                   Register Now
                 </a>
               </div>
@@ -163,7 +163,7 @@ export default function OnlineBusiness() {
                 <iconify-icon icon="solar:shield-check-bold-duotone" width="28"></iconify-icon>
               </div>
               <div>
-                <h4 className="font-semibold text-[#111827] text-sm mb-1">100% Secure</h4>
+                <h4 className="font-semibold text-[#1A1A1A] text-sm mb-1">100% Secure</h4>
                 <p className="text-xs text-gray-500 leading-relaxed">End-to-end protected</p>
               </div>
             </div>
@@ -173,7 +173,7 @@ export default function OnlineBusiness() {
                 <iconify-icon icon="solar:cpu-bolt-bold-duotone" width="28"></iconify-icon>
               </div>
               <div>
-                <h4 className="font-semibold text-[#111827] text-sm mb-1">AI Powered</h4>
+                <h4 className="font-semibold text-[#1A1A1A] text-sm mb-1">AI Powered</h4>
                 <p className="text-xs text-gray-500 leading-relaxed">Smart file organization</p>
               </div>
             </div>
@@ -183,7 +183,7 @@ export default function OnlineBusiness() {
                 <iconify-icon icon="solar:lock-password-bold-duotone" width="28"></iconify-icon>
               </div>
               <div>
-                <h4 className="font-semibold text-[#111827] text-sm mb-1">Private &amp; Safe</h4>
+                <h4 className="font-semibold text-[#1A1A1A] text-sm mb-1">Private &amp; Safe</h4>
                 <p className="text-xs text-gray-500 leading-relaxed">Only you have access</p>
               </div>
             </div>
@@ -198,7 +198,7 @@ export default function OnlineBusiness() {
           <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-6">
             <div className="max-w-xl">
               <span className="section-label text-[#29CD71]">01 — What We Do</span>
-              <h2 className="text-3xl md:text-5xl text-[#111827] mt-2 mb-4">Everything you need, organized beautifully.</h2>
+              <h2 className="text-3xl md:text-5xl text-[#1A1A1A] mt-2 mb-4">Everything you need, organized beautifully.</h2>
             </div>
           </div>
 
@@ -209,7 +209,7 @@ export default function OnlineBusiness() {
               <div className="w-10 h-10 rounded-full bg-[#B269EC]/10 text-[#B269EC] flex items-center justify-center mb-6">
                 <iconify-icon icon="solar:folder-with-files-bold-duotone" width="20"></iconify-icon>
               </div>
-              <h3 className="text-lg font-medium text-[#0F172A] mb-2">Smart File Organization</h3>
+              <h3 className="text-lg font-medium text-[#1A1A1A] mb-2">Smart File Organization</h3>
               <p className="text-sm text-gray-500 font-light mb-4">AI automatically sorts your WhatsApp files by type, date and size.</p>
             </div>
 
@@ -218,7 +218,7 @@ export default function OnlineBusiness() {
               <div className="w-10 h-10 rounded-full bg-[#B269EC]/10 text-[#B269EC] flex items-center justify-center mb-6">
                 <iconify-icon icon="solar:magnifer-bold-duotone" width="20"></iconify-icon>
               </div>
-              <h3 className="text-lg font-medium text-[#0F172A] mb-2">Instant Search</h3>
+              <h3 className="text-lg font-medium text-[#1A1A1A] mb-2">Instant Search</h3>
               <p className="text-sm text-gray-500 font-light mb-4">Find any file in seconds with powerful AI search technology.</p>
             </div>
 
@@ -227,7 +227,7 @@ export default function OnlineBusiness() {
               <div className="w-10 h-10 rounded-full bg-[#B269EC]/10 text-[#B269EC] flex items-center justify-center mb-6">
                 <iconify-icon icon="solar:diskette-bold-duotone" width="20"></iconify-icon>
               </div>
-              <h3 className="text-lg font-medium text-[#0F172A] mb-2">Save with AI</h3>
+              <h3 className="text-lg font-medium text-[#1A1A1A] mb-2">Save with AI</h3>
               <p className="text-sm text-gray-500 font-light mb-4">Save important files automatically and never lose them again.</p>
             </div>
 
@@ -236,7 +236,7 @@ export default function OnlineBusiness() {
               <div className="w-10 h-10 rounded-full bg-[#B269EC]/10 text-[#B269EC] flex items-center justify-center mb-6">
                 <iconify-icon icon="solar:forward-bold-duotone" width="20"></iconify-icon>
               </div>
-              <h3 className="text-lg font-medium text-[#0F172A] mb-2">Easy Forward</h3>
+              <h3 className="text-lg font-medium text-[#1A1A1A] mb-2">Easy Forward</h3>
               <p className="text-sm text-gray-500 font-light mb-4">Forward files quickly without losing quality or original format.</p>
             </div>
           </div>
@@ -250,7 +250,7 @@ export default function OnlineBusiness() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-4 relative lg:sticky lg:top-24 z-10 bg-[#F8FAFC] lg:bg-transparent py-4 lg:py-0">
               <span className="section-label text-[#29CD71]">02 — Process</span>
-              <h2 className="text-3xl md:text-5xl text-[#111827] mt-2 mb-6">How It Works</h2>
+              <h2 className="text-3xl md:text-5xl text-[#1A1A1A] mt-2 mb-6">How It Works</h2>
 
               <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm mt-8">
                 <div className="flex items-center gap-3 mb-3">
@@ -266,33 +266,33 @@ export default function OnlineBusiness() {
             <div className="lg:col-span-8 space-y-6">
               {/* Step 1 */}
               <div className="flex gap-6 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-[#29CD71]/30 transition-colors">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#111827] text-white flex items-center justify-center font-serif text-xl">01</div>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center font-serif text-xl">01</div>
                 <div>
-                  <h3 className="text-xl font-medium text-[#111827] mb-2">Forward</h3>
+                  <h3 className="text-xl font-medium text-[#1A1A1A] mb-2">Forward</h3>
                   <p className="text-gray-500 font-light text-sm leading-relaxed">Forward any file in WhatsApp to SawAap.</p>
                 </div>
               </div>
               {/* Step 2 */}
               <div className="flex gap-6 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-[#29CD71]/30 transition-colors">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#111827] text-white flex items-center justify-center font-serif text-xl">02</div>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center font-serif text-xl">02</div>
                 <div>
-                  <h3 className="text-xl font-medium text-[#111827] mb-2">Save with AI</h3>
+                  <h3 className="text-xl font-medium text-[#1A1A1A] mb-2">Save with AI</h3>
                   <p className="text-gray-500 font-light text-sm leading-relaxed">Our AI saves and organizes it instantly.</p>
                 </div>
               </div>
               {/* Step 3 */}
               <div className="flex gap-6 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-[#29CD71]/30 transition-colors">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#111827] text-white flex items-center justify-center font-serif text-xl">03</div>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center font-serif text-xl">03</div>
                 <div>
-                  <h3 className="text-xl font-medium text-[#111827] mb-2">Find Instantly</h3>
+                  <h3 className="text-xl font-medium text-[#1A1A1A] mb-2">Find Instantly</h3>
                   <p className="text-gray-500 font-light text-sm leading-relaxed">Search and find any file in a second.</p>
                 </div>
               </div>
               {/* Step 4 */}
               <div className="flex gap-6 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-[#29CD71]/30 transition-colors">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#111827] text-white flex items-center justify-center font-serif text-xl">04</div>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center font-serif text-xl">04</div>
                 <div>
-                  <h3 className="text-xl font-medium text-[#111827] mb-2">Get It</h3>
+                  <h3 className="text-xl font-medium text-[#1A1A1A] mb-2">Get It</h3>
                   <p className="text-gray-500 font-light text-sm leading-relaxed">Access, view or share whenever you need.</p>
                 </div>
               </div>
@@ -308,7 +308,7 @@ export default function OnlineBusiness() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="section-label text-[#29CD71]">03 — Security</span>
-              <h2 className="text-3xl md:text-5xl text-[#111827] mt-2 mb-8">Private file memory for your WhatsApp life.</h2>
+              <h2 className="text-3xl md:text-5xl text-[#1A1A1A] mt-2 mb-8">Private file memory for your WhatsApp life.</h2>
               <p className="text-gray-500 mb-8 font-light leading-relaxed text-lg">
                 Files stay in secure private storage with signed access links, consent tracking, deletion controls and safe retrieval.
               </p>
@@ -316,19 +316,19 @@ export default function OnlineBusiness() {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center gap-3">
                   <iconify-icon icon="solar:check-circle-linear" className="text-[#B269EC] text-xl"></iconify-icon>
-                  <span className="text-[#0F172A] font-medium">Secure private storage</span>
+                  <span className="text-[#1A1A1A] font-medium">Secure private storage</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <iconify-icon icon="solar:check-circle-linear" className="text-[#B269EC] text-xl"></iconify-icon>
-                  <span className="text-[#0F172A] font-medium">Signed download links</span>
+                  <span className="text-[#1A1A1A] font-medium">Signed download links</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <iconify-icon icon="solar:check-circle-linear" className="text-[#B269EC] text-xl"></iconify-icon>
-                  <span className="text-[#0F172A] font-medium">WhatsApp consent onboarding</span>
+                  <span className="text-[#1A1A1A] font-medium">WhatsApp consent onboarding</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <iconify-icon icon="solar:check-circle-linear" className="text-[#B269EC] text-xl"></iconify-icon>
-                  <span className="text-[#0F172A] font-medium">Email OTP activation</span>
+                  <span className="text-[#1A1A1A] font-medium">Email OTP activation</span>
                 </li>
               </ul>
             </div>
@@ -345,7 +345,7 @@ export default function OnlineBusiness() {
             Forward. Save. Get it.
           </p>
           <div className="flex flex-col items-center justify-center gap-3">
-            <a href="#" className="px-8 py-4 bg-white text-[#111827] rounded-full font-medium hover:bg-gray-100 transition-all shadow-lg flex items-center gap-3 transform hover:-translate-y-1">
+            <a href="#" className="px-8 py-4 bg-white text-[#1A1A1A] rounded-full font-medium hover:bg-gray-100 transition-all shadow-lg flex items-center gap-3 transform hover:-translate-y-1">
               <iconify-icon icon="mdi:whatsapp" className="text-2xl text-[#25D366]"></iconify-icon>
               Chat with us
             </a>
@@ -357,7 +357,7 @@ export default function OnlineBusiness() {
 
 
       {/* 10. FOOTER */}
-      <footer className="bg-[#0F172A] text-white pt-24 pb-12">
+      <footer className="bg-[#1A1A1A] text-white pt-24 pb-12">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 border-b border-white/10 pb-16">
             {/* Brand */}

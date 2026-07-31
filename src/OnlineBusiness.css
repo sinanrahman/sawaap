@@ -1,11 +1,11 @@
 :root {
   /* Shifted to a deep charcoal/navy finance tone while keeping similar variable names to preserve theme structure */
-  --muskeg-pine: #111827; /* Deep Navy/Charcoal */
+  --muskeg-pine: #1A1A1A; /* Deep Navy/Charcoal */
   --boreal-sky: #29CD71; /* Trust Blue */
   --cree-teal: #29CD71; /* Bright Accent Blue */
   --prairie-gold: #F59E0B; /* Warning/Action Gold */
   --calm-clay: #E5E7EB; /* Neutral Light Gray */
-  --charcoal: #0F172A;
+  --charcoal: #1A1A1A;
   --fog-grey: #F8FAFC;
 }
 
