@@ -1,0 +1,100 @@
+:root {
+  /* Shifted to a deep charcoal/navy finance tone while keeping similar variable names to preserve theme structure */
+  --muskeg-pine: #111827; /* Deep Navy/Charcoal */
+  --boreal-sky: #29CD71; /* Trust Blue */
+  --cree-teal: #29CD71; /* Bright Accent Blue */
+  --prairie-gold: #F59E0B; /* Warning/Action Gold */
+  --calm-clay: #E5E7EB; /* Neutral Light Gray */
+  --charcoal: #0F172A;
+  --fog-grey: #F8FAFC;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--charcoal);
+  background-color: var(--fog-grey);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+.bg-grid-pattern {
+  background-image: radial-gradient(var(--boreal-sky) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.1;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.section-label {
+  font-size: 0.75rem; /* xs */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes wipeInTop {
+  from { opacity: 0; transform: translateY(-80px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes wipeInBottom {
+  from { opacity: 0; transform: translateY(80px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-wipe-in-top {
+  animation: wipeInTop 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-wipe-in-bottom {
+  animation: wipeInBottom 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(15px); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
