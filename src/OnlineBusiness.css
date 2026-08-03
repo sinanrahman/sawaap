@@ -1,16 +1,16 @@
 :root {
   /* Shifted to a deep charcoal/navy finance tone while keeping similar variable names to preserve theme structure */
-  --muskeg-pine: #1A1A1A; /* Deep Navy/Charcoal */
+  --muskeg-pine: white; /* Deep Navy/Charcoal */
   --boreal-sky: #29CD71; /* Trust Blue */
   --cree-teal: #29CD71; /* Bright Accent Blue */
   --prairie-gold: #F59E0B; /* Warning/Action Gold */
   --calm-clay: #E5E7EB; /* Neutral Light Gray */
-  --charcoal: #1A1A1A;
-  --fog-grey: #F8FAFC;
+  --charcoal: white;
+  --fog-grey: #1A1A1A;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'TT Lakes Neue', sans-serif;
   color: var(--charcoal);
   background-color: var(--fog-grey);
   -webkit-font-smoothing: antialiased;
@@ -18,7 +18,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'TT Lakes Neue', sans-serif;
 }
 
 .bg-grid-pattern {
@@ -28,10 +28,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(26, 26, 26, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(26, 26, 26, 0.6);
 }
 
 .section-label {
