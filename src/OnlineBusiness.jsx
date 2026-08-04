@@ -8,15 +8,18 @@ import MagnifierIcon from './MagnifierIcon';
 import ShieldCheck from './ShieldCheck';
 import BrainCircuitIcon from './BrainCircuitIcon';
 import LockIcon from './LockIcon';
+import InteractiveProblemSection from './InteractiveProblemSection';
 
-const BackgroundOrbital = ({ position = 'right' }) => {
+const BackgroundOrbital = ({ position = 'right', showOuterCurve = true }) => {
   return (
     <div className="absolute inset-0 pointer-events-none z-0 overflow-visible">
       {/* The large background curve */}
-      <div
-        className={`absolute top-[-20%] bottom-[-20%] w-[150%] md:w-[70%] rounded-[100%] border-[#29CD71]/20 ${position === 'left' ? 'left-[-50%] md:left-[-20%] border-r bg-gradient-to-l' : 'right-[-50%] md:right-[-20%] border-l bg-gradient-to-r'
-          } from-transparent to-[#29CD71]/10 opacity-70`}
-      ></div>
+      {showOuterCurve && (
+        <div
+          className={`absolute top-[-20%] bottom-[-20%] w-[150%] md:w-[70%] rounded-[100%] border-[#29CD71]/20 ${position === 'left' ? 'left-[-50%] md:left-[-20%] border-r bg-gradient-to-l' : 'right-[-50%] md:right-[-20%] border-l bg-gradient-to-r'
+            } from-transparent to-[#29CD71]/10 opacity-70`}
+        ></div>
+      )}
 
       {/* The Orbital Ring and Orb */}
       <div className={`absolute top-1/2 -translate-y-1/2 opacity-50 ${position === 'left' ? 'left-[-10%]' : 'right-[-10%]'}`}>
@@ -87,80 +90,83 @@ export default function OnlineBusiness() {
   };
 
   return (
-    <div className="selection:bg-[#29CD71] selection:text-[#1A1A1A] overflow-x-clip relative min-h-screen">
+    <div className="selection:bg-[#29CD71] selection:text-[#1A1A1A] overflow-x-clip relative min-h-screen bg-[#141414]">
       {/* NAVIGATION */}
       <nav className={`fixed top-0 w-full z-50 transition-transform duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}>
-        <div className="glass-panel mx-auto max-w-7xl mt-4 mx-4 md:mx-auto rounded-full px-6 py-3 flex items-center justify-between shadow-sm">
+        <div className="glass-panel mx-auto max-w-7xl mt-4 mx-4 lg:mx-auto rounded-full px-6 py-3.5 flex items-center justify-between shadow-lg border border-white/10">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <img src="/logo.png" alt="SawAap Logo" className="w-8 h-8 object-contain" />
-            <span className="font-sans text-sm tracking-widest font-medium  text-white">SawAap</span>
+          <a href="#" className="flex items-center group">
+            <img src="/logo-with-text.png" alt="SawAap Logo" className="w-32 md:w-40 h-auto object-contain transition-transform group-hover:scale-105" />
           </a>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-6">
-            <a href="#sell" className="text-xs font-medium uppercase tracking-wide text-white hover:text-[#29CD71] transition-colors">Home</a>
-            <a href="#readiness" className="text-xs font-medium uppercase tracking-wide text-white hover:text-[#29CD71] transition-colors">Features</a>
-            <a href="#how-it-works" className="text-xs font-medium uppercase tracking-wide text-white hover:text-[#29CD71] transition-colors">How It Works</a>
-            <a href="#buyers" className="text-xs font-medium uppercase tracking-wide text-white hover:text-[#29CD71] transition-colors">About</a>
-            <a href="#resources" className="text-xs font-medium uppercase tracking-wide text-white hover:text-[#29CD71] transition-colors">Blog</a>
-            <a href="#resources" className="text-xs font-medium uppercase tracking-wide text-white hover:text-[#29CD71] transition-colors">FAQ</a>
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#home" className="text-sm font-medium tracking-wide text-white/90 hover:text-[#29CD71] transition-colors">Home</a>
+            <a href="#services" className="text-sm font-medium tracking-wide text-white/90 hover:text-[#29CD71] transition-colors">Features</a>
+            <a href="#how-it-works" className="text-sm font-medium tracking-wide text-white/90 hover:text-[#29CD71] transition-colors">How It Works</a>
+            <a href="#security" className="text-sm font-medium tracking-wide text-white/90 hover:text-[#29CD71] transition-colors">Security</a>
+            <a href="#faq" className="text-sm font-medium tracking-wide text-white/90 hover:text-[#29CD71] transition-colors">FAQ</a>
           </div>
 
           {/* CTA */}
-          <a href="#login" className="hidden md:flex items-center gap-2 bg-white hover:bg-[#29CD71] text-[#1A1A1A] px-5 py-2 rounded-full text-xs font-medium transition-all transform hover:scale-105">
-            <span>Login</span>
-            <iconify-icon icon="solar:login-2-linear"></iconify-icon>
-          </a>
+          <div className="hidden md:flex items-center gap-4">
+            <a href="#login" className="text-sm font-semibold text-white/90 hover:text-white transition-colors">
+              Login
+            </a>
+            <a href="#get-started" className="flex items-center gap-2 bg-[#29CD71] hover:bg-white text-[#141414] px-6 py-2.5 rounded-full text-sm font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(41,205,113,0.3)]">
+              <span>Get Started</span>
+              <iconify-icon icon="solar:arrow-right-bold"></iconify-icon>
+            </a>
+          </div>
 
           {/* Mobile Menu */}
-          <button className="md:hidden text-white">
-            <iconify-icon icon="solar:hamburger-menu-linear" width="24"></iconify-icon>
+          <button className="md:hidden text-white hover:text-[#29CD71] transition-colors">
+            <iconify-icon icon="solar:hamburger-menu-linear" width="28"></iconify-icon>
           </button>
         </div>
       </nav>
 
       {/* 1. HERO PAGE */}
-      <header className="relative pt-32 pb-24 md:pt-48 md:pb-32">
+      <header className="relative pt-28 pb-20 md:pt-48 md:pb-32 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 z-0 pointer-events-none" style={{ maskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 100%)' }}>
-          <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-[#29CD71] rounded-full mix-blend-multiply filter blur-[100px] opacity-10"></div>
-          <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-[#29CD71] rounded-full mix-blend-multiply filter blur-[120px] opacity-10"></div>
+          <div className="absolute top-[-10%] right-[-5%] w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-[#29CD71] rounded-full mix-blend-multiply filter blur-[100px] opacity-10"></div>
+          <div className="absolute bottom-[-10%] left-[-10%] w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-[#29CD71] rounded-full mix-blend-multiply filter blur-[120px] opacity-10"></div>
           <div className="bg-grid-pattern absolute inset-0"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 mt-8 md:mt-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 items-center">
             {/* Left Column: Text */}
             <div className="text-left animate-fade-in-up">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1A1A1A] border border-gray-200 text-white text-xs font-medium mb-8 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-[#29CD71]"></span>
-                <span>India's First AI Powered 100% Secure</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white text-xs font-medium mb-6 md:mb-8 shadow-sm backdrop-blur-sm">
+                <span className="w-2 h-2 rounded-full bg-[#29CD71] animate-pulse"></span>
+                <span>India's First AI Powered 100% Secure Storage</span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white mb-8 leading-[1.05]">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-4 md:mb-6 leading-[1.15]">
                 Forward. <br />
-                <span className="italic font-light text-[#29CD71]">Save.</span>
+                <span className="text-[#29CD71]">Save.</span>
                 <br />
-                <span className="italic font-light text-[#29CD71]">Get it.</span>
+                <span className="text-[#29CD71]">Get it.</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-white/70 max-w-lg mb-10 leading-relaxed font-light">
-                The smarter way to forward, save and find WhatsApp files instantly with AI.
+              <p className="text-base md:text-xl text-gray-300 max-w-lg mb-8 md:mb-10 leading-relaxed font-normal">
+                The smarter way to forward, save, and find WhatsApp files instantly with AI.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-start gap-4 mb-8">
-                <a href="#readiness" className="w-full sm:w-auto px-8 py-4 bg-white text-[#1A1A1A] rounded-full font-medium transition-all hover:bg-[#29CD71] hover:shadow-lg flex items-center justify-center gap-2">
-                  Chat with us
-                  <iconify-icon icon="solar:chat-round-line-linear"></iconify-icon>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 mb-10">
+                <a href="#get-started" className="w-full sm:w-auto px-6 py-4 md:px-8 md:py-4 bg-[#29CD71] text-[#1A1A1A] rounded-full font-bold transition-all hover:bg-white hover:shadow-[0_0_25px_rgba(41,205,113,0.5)] flex items-center justify-center gap-2 text-base md:text-lg">
+                  Start for Free
+                  <iconify-icon icon="solar:arrow-right-bold" className="text-xl"></iconify-icon>
                 </a>
-                <a href="#sell" className="w-full sm:w-auto px-8 py-4 bg-[#1A1A1A] text-white border border-gray-200 rounded-full font-medium transition-all hover:bg-gray-50 flex items-center justify-center gap-2">
-                  Register Now
+                <a href="#demo" className="w-full sm:w-auto px-6 py-4 md:px-8 md:py-4 bg-white/10 text-white border border-white/20 rounded-full font-semibold transition-all hover:bg-white/20 flex items-center justify-center gap-2 backdrop-blur-sm text-base md:text-lg">
+                  See how it works
                 </a>
               </div>
 
-              <div className="flex flex-wrap items-center justify-start gap-6 text-xs text-gray-500 font-medium">
-                <div className="flex items-center gap-1.5"><iconify-icon icon="solar:check-circle-linear" className="text-[#B269EC]"></iconify-icon> Now live on WhatsApp</div>
+              <div className="flex flex-wrap items-center justify-start gap-4 md:gap-6 text-sm text-gray-300 font-medium">
+                <div className="flex items-center gap-2"><iconify-icon icon="solar:check-circle-bold" className="text-[#29CD71] text-lg"></iconify-icon> Now live on WhatsApp</div>
               </div>
             </div>
 
@@ -181,33 +187,33 @@ export default function OnlineBusiness() {
 
           {/* Bottom Feature Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 md:mt-24 text-left animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <div className="flex items-start gap-4 p-5 rounded-2xl bg-[#1A1A1A]/70 border border-[#1A1A1A]/60 shadow-sm backdrop-blur-md hover:bg-[#1A1A1A] transition-colors">
-              <div className="w-12 h-12 rounded-full bg-[#B269EC]/10 flex items-center justify-center text-[#B269EC] shrink-0">
-                <ShieldCheck size={28} color="currentColor" strokeWidth={2} />
+            <div className="flex items-start gap-5 p-6 rounded-2xl bg-white/5 border border-white/10 shadow-lg backdrop-blur-md hover:bg-white/10 hover:border-[#29CD71]/30 transition-all">
+              <div className="w-14 h-14 rounded-full bg-[#29CD71]/10 flex items-center justify-center text-[#29CD71] shrink-0">
+                <ShieldCheck size={32} color="currentColor" strokeWidth={2} />
               </div>
               <div>
-                <h4 className="font-semibold text-white text-sm mb-1">100% Secure</h4>
-                <p className="text-xs text-gray-500 leading-relaxed">End-to-end protected</p>
+                <h4 className="font-semibold text-white text-base mb-1">100% Secure</h4>
+                <p className="text-sm md:text-base text-gray-300 leading-relaxed">End-to-end protected storage</p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-5 rounded-2xl bg-[#1A1A1A]/70 border border-[#1A1A1A]/60 shadow-sm backdrop-blur-md hover:bg-[#1A1A1A] transition-colors">
-              <div className="w-12 h-12 rounded-full bg-[#B269EC]/10 flex items-center justify-center text-[#B269EC] shrink-0">
-                <BrainCircuitIcon size={28} color="currentColor" strokeWidth={2} />
+            <div className="flex items-start gap-5 p-6 rounded-2xl bg-white/5 border border-white/10 shadow-lg backdrop-blur-md hover:bg-white/10 hover:border-[#29CD71]/30 transition-all">
+              <div className="w-14 h-14 rounded-full bg-[#29CD71]/10 flex items-center justify-center text-[#29CD71] shrink-0">
+                <BrainCircuitIcon size={32} color="currentColor" strokeWidth={2} />
               </div>
               <div>
-                <h4 className="font-semibold text-white text-sm mb-1">AI Powered</h4>
-                <p className="text-xs text-gray-500 leading-relaxed">Smart file organization</p>
+                <h4 className="font-semibold text-white text-base mb-1">AI Powered</h4>
+                <p className="text-sm md:text-base text-gray-300 leading-relaxed">Smart file organization</p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-5 rounded-2xl bg-[#1A1A1A]/70 border border-[#1A1A1A]/60 shadow-sm backdrop-blur-md hover:bg-[#1A1A1A] transition-colors">
-              <div className="w-12 h-12 rounded-full bg-[#B269EC]/10 flex items-center justify-center text-[#B269EC] shrink-0">
-                <LockIcon size={28} color="currentColor" strokeWidth={2} />
+            <div className="flex items-start gap-5 p-6 rounded-2xl bg-white/5 border border-white/10 shadow-lg backdrop-blur-md hover:bg-white/10 hover:border-[#29CD71]/30 transition-all">
+              <div className="w-14 h-14 rounded-full bg-[#29CD71]/10 flex items-center justify-center text-[#29CD71] shrink-0">
+                <LockIcon size={32} color="currentColor" strokeWidth={2} />
               </div>
               <div>
-                <h4 className="font-semibold text-white text-sm mb-1">Private &amp; Safe</h4>
-                <p className="text-xs text-gray-500 leading-relaxed">Only you have access</p>
+                <h4 className="font-semibold text-white text-base mb-1">Private &amp; Safe</h4>
+                <p className="text-sm md:text-base text-gray-300 leading-relaxed">Only you have access</p>
               </div>
             </div>
           </div>
@@ -215,108 +221,110 @@ export default function OnlineBusiness() {
       </header>
 
       {/* 2. WHAT WE DO (SERVICES) */}
-      <section id="services" className="py-24 bg-[#1A1A1A] relative">
+      <section id="services" className="py-20 md:py-32 bg-[#141414] relative">
         <BackgroundOrbital position="right" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-6">
-            <div className="max-w-xl">
-              <span className="section-label text-[#29CD71]">01 — What We Do</span>
-              <h2 className="text-3xl md:text-5xl text-white mt-2 mb-4">Everything you need, organized beautifully.</h2>
+          <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 md:mb-16 gap-6">
+            <div className="max-w-2xl">
+              <span className="section-label text-[#29CD71] bg-[#29CD71]/10 px-3 py-1 rounded-full text-[10px] md:text-xs">01 — What We Do</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 mb-4 md:mb-6 leading-tight">Everything you need, organized beautifully.</h2>
             </div>
           </div>
 
           {/* Previews */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {/* Service 1 */}
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0 }} className="group block p-8 bg-[#1A1A1A] rounded-2xl border border-transparent hover:border-gray-200 hover:bg-[#1A1A1A] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-              <div className="w-10 h-10 rounded-full bg-[#B269EC]/10 text-[#B269EC] flex items-center justify-center mb-6">
-                <FileDescriptionIcon size={20} color="currentColor" strokeWidth={2.5} />
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0 }} className="group block p-6 md:p-8 bg-white/5 rounded-2xl md:rounded-3xl border border-white/10 hover:border-[#29CD71]/50 hover:bg-white/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-[#29CD71]/10 text-[#29CD71] flex items-center justify-center mb-5 md:mb-6 group-hover:scale-110 transition-transform">
+                <FileDescriptionIcon size={20} className="md:w-[24px] md:h-[24px]" color="currentColor" strokeWidth={2} />
               </div>
-              <h3 className="text-lg font-medium text-white mb-2">Smart File Organization</h3>
-              <p className="text-sm text-gray-500 font-light mb-4">AI automatically sorts your WhatsApp files by type, date and size.</p>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3">Smart File Organization</h3>
+              <p className="text-sm md:text-base text-gray-300 font-normal leading-relaxed">AI automatically sorts your WhatsApp files by type, date, and context.</p>
             </motion.div>
 
             {/* Service 2 */}
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.1 }} className="group block p-8 bg-[#1A1A1A] rounded-2xl border border-transparent hover:border-gray-200 hover:bg-[#1A1A1A] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-              <div className="w-10 h-10 rounded-full bg-[#B269EC]/10 text-[#B269EC] flex items-center justify-center mb-6">
-                <MagnifierIcon size={20} color="currentColor" strokeWidth={2.5} />
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.1 }} className="group block p-6 md:p-8 bg-white/5 rounded-2xl md:rounded-3xl border border-white/10 hover:border-[#29CD71]/50 hover:bg-white/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-[#29CD71]/10 text-[#29CD71] flex items-center justify-center mb-5 md:mb-6 group-hover:scale-110 transition-transform">
+                <MagnifierIcon size={20} className="md:w-[24px] md:h-[24px]" color="currentColor" strokeWidth={2} />
               </div>
-              <h3 className="text-lg font-medium text-white mb-2">Instant Search</h3>
-              <p className="text-sm text-gray-500 font-light mb-4">Find any file in seconds with powerful AI search technology.</p>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3">Instant Search</h3>
+              <p className="text-sm md:text-base text-gray-300 font-normal leading-relaxed">Find any file in seconds with powerful, natural language AI search.</p>
             </motion.div>
 
             {/* Service 3 */}
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.2 }} className="group block p-8 bg-[#1A1A1A] rounded-2xl border border-transparent hover:border-gray-200 hover:bg-[#1A1A1A] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-              <div className="w-10 h-10 rounded-full bg-[#B269EC]/10 text-[#B269EC] flex items-center justify-center mb-6">
-                <BookmarkIcon size={20} color="currentColor" strokeWidth={2.5} />
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.2 }} className="group block p-6 md:p-8 bg-white/5 rounded-2xl md:rounded-3xl border border-white/10 hover:border-[#29CD71]/50 hover:bg-white/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-[#29CD71]/10 text-[#29CD71] flex items-center justify-center mb-5 md:mb-6 group-hover:scale-110 transition-transform">
+                <BookmarkIcon size={20} className="md:w-[24px] md:h-[24px]" color="currentColor" strokeWidth={2} />
               </div>
-              <h3 className="text-lg font-medium text-white mb-2">Save with AI</h3>
-              <p className="text-sm text-gray-500 font-light mb-4">Save important files automatically and never lose them again.</p>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3">Save with AI</h3>
+              <p className="text-sm md:text-base text-gray-300 font-normal leading-relaxed">Save important files automatically and never lose them again.</p>
             </motion.div>
 
             {/* Service 4 */}
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.3 }} className="group block p-8 bg-[#1A1A1A] rounded-2xl border border-transparent hover:border-gray-200 hover:bg-[#1A1A1A] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-              <div className="w-10 h-10 rounded-full bg-[#B269EC]/10 text-[#B269EC] flex items-center justify-center mb-6">
-                <ArrowNarrowRightDashedIcon size={20} color="currentColor" strokeWidth={2.5} />
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.3 }} className="group block p-6 md:p-8 bg-white/5 rounded-2xl md:rounded-3xl border border-white/10 hover:border-[#29CD71]/50 hover:bg-white/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-[#29CD71]/10 text-[#29CD71] flex items-center justify-center mb-5 md:mb-6 group-hover:scale-110 transition-transform">
+                <ArrowNarrowRightDashedIcon size={20} className="md:w-[24px] md:h-[24px]" color="currentColor" strokeWidth={2} />
               </div>
-              <h3 className="text-lg font-medium text-white mb-2">Easy Forward</h3>
-              <p className="text-sm text-gray-500 font-light mb-4">Forward files quickly without losing quality or original format.</p>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3">Easy Forward</h3>
+              <p className="text-sm md:text-base text-gray-300 font-normal leading-relaxed">Forward files quickly without losing quality or original format.</p>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* 3. HOW IT WORKS */}
-      <section id="how-it-works" className="py-24 bg-[#1A1A1A] relative">
+      <section id="how-it-works" className="py-20 md:py-32 bg-[#141414] relative">
         <BackgroundOrbital position="left" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-4 relative lg:sticky lg:top-24 z-10 bg-[#1A1A1A] lg:bg-transparent py-4 lg:py-0">
-              <span className="section-label text-[#29CD71]">02 — Process</span>
-              <h2 className="text-3xl md:text-5xl text-white mt-2 mb-6">How It Works</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-start">
+            <div className="lg:col-span-5 relative lg:sticky lg:top-32 z-10 py-4 lg:py-0">
+              <span className="section-label text-[#29CD71] bg-[#29CD71]/10 px-3 py-1 rounded-full text-[10px] md:text-xs">02 — Process</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 mb-4 md:mb-6">How It Works</h2>
 
-              <div className="bg-[#1A1A1A] p-6 rounded-2xl border border-transparent hover:border-gray-100 shadow-sm mt-8 transition-colors">
-                <div className="flex items-center gap-3 mb-3">
-                  <iconify-icon icon="solar:shield-check-linear" className="text-[#B269EC] text-xl"></iconify-icon>
-                  <h4 className="font-medium text-sm">Forward Once. Find Forever.</h4>
+              <div className="bg-white/5 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-white/10 shadow-lg mt-6 md:mt-8 backdrop-blur-sm">
+                <div className="flex items-center gap-3 md:gap-4 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-[#29CD71]/10 flex items-center justify-center text-[#29CD71]">
+                    <ShieldCheck size={24} color="currentColor" />
+                  </div>
+                  <h4 className="font-semibold text-base md:text-lg text-white">Forward Once. Find Forever.</h4>
                 </div>
-                <p className="text-sm text-gray-500 font-light leading-relaxed">
+                <p className="text-sm md:text-base text-gray-300 font-normal leading-relaxed">
                   Every file you forward is securely saved, intelligently organized, and instantly searchable. Access your WhatsApp files anytime, anywhere.
                 </p>
               </div>
             </div>
 
-            <div className="lg:col-span-8 space-y-6">
+            <div className="lg:col-span-7 space-y-4 md:space-y-6">
               {/* Step 1 */}
-              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0 }} className="flex gap-6 bg-[#1A1A1A] p-8 rounded-2xl border border-transparent hover:border-gray-100 shadow-sm transition-colors">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white text-[#1A1A1A] flex items-center justify-center font-serif text-xl">01</div>
+              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0 }} className="flex gap-4 md:gap-6 bg-white/5 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-white/10 hover:border-[#29CD71]/50 hover:bg-white/10 shadow-lg transition-all">
+                <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-[#29CD71] text-[#141414] flex items-center justify-center font-bold text-lg md:text-xl shadow-[0_0_15px_rgba(41,205,113,0.3)]">01</div>
                 <div>
-                  <h3 className="text-xl font-medium text-white mb-2">Forward</h3>
-                  <p className="text-gray-500 font-light text-sm leading-relaxed">Forward any file in WhatsApp to SawAap.</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Forward</h3>
+                  <p className="text-sm md:text-base text-gray-300 font-normal leading-relaxed">Forward any file in WhatsApp to SawAap.</p>
                 </div>
               </motion.div>
               {/* Step 2 */}
-              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.1 }} className="flex gap-6 bg-[#1A1A1A] p-8 rounded-2xl border border-transparent hover:border-gray-100 shadow-sm transition-colors">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white text-[#1A1A1A] flex items-center justify-center font-serif text-xl">02</div>
+              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.1 }} className="flex gap-4 md:gap-6 bg-white/5 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-white/10 hover:border-[#29CD71]/50 hover:bg-white/10 shadow-lg transition-all">
+                <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-[#29CD71] text-[#141414] flex items-center justify-center font-bold text-lg md:text-xl shadow-[0_0_15px_rgba(41,205,113,0.3)]">02</div>
                 <div>
-                  <h3 className="text-xl font-medium text-white mb-2">Save with AI</h3>
-                  <p className="text-gray-500 font-light text-sm leading-relaxed">Our AI saves and organizes it instantly.</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Save with AI</h3>
+                  <p className="text-sm md:text-base text-gray-300 font-normal leading-relaxed">Our AI saves and organizes it instantly.</p>
                 </div>
               </motion.div>
               {/* Step 3 */}
-              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.2 }} className="flex gap-6 bg-[#1A1A1A] p-8 rounded-2xl border border-transparent hover:border-gray-100 shadow-sm transition-colors">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white text-[#1A1A1A] flex items-center justify-center font-serif text-xl">03</div>
+              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.2 }} className="flex gap-4 md:gap-6 bg-white/5 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-white/10 hover:border-[#29CD71]/50 hover:bg-white/10 shadow-lg transition-all">
+                <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-[#29CD71] text-[#141414] flex items-center justify-center font-bold text-lg md:text-xl shadow-[0_0_15px_rgba(41,205,113,0.3)]">03</div>
                 <div>
-                  <h3 className="text-xl font-medium text-white mb-2">Find Instantly</h3>
-                  <p className="text-gray-500 font-light text-sm leading-relaxed">Search and find any file in a second.</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Find Instantly</h3>
+                  <p className="text-sm md:text-base text-gray-300 font-normal leading-relaxed">Search and find any file in a second.</p>
                 </div>
               </motion.div>
               {/* Step 4 */}
-              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.3 }} className="flex gap-6 bg-[#1A1A1A] p-8 rounded-2xl border border-transparent hover:border-gray-100 shadow-sm transition-colors">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white text-[#1A1A1A] flex items-center justify-center font-serif text-xl">04</div>
+              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: 0.3 }} className="flex gap-4 md:gap-6 bg-white/5 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-white/10 hover:border-[#29CD71]/50 hover:bg-white/10 shadow-lg transition-all">
+                <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-[#29CD71] text-[#141414] flex items-center justify-center font-bold text-lg md:text-xl shadow-[0_0_15px_rgba(41,205,113,0.3)]">04</div>
                 <div>
-                  <h3 className="text-xl font-medium text-white mb-2">Get It</h3>
-                  <p className="text-gray-500 font-light text-sm leading-relaxed">Access, view or share whenever you need.</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Get It</h3>
+                  <p className="text-sm md:text-base text-gray-300 font-normal leading-relaxed">Access, view, or share whenever you need.</p>
                 </div>
               </motion.div>
             </div>
@@ -325,33 +333,41 @@ export default function OnlineBusiness() {
       </section>
 
       {/* 4. WHO THIS IS FOR (QUALIFICATION) */}
-      <section className="py-24 bg-[#1A1A1A] relative">
-        <BackgroundOrbital position="right" />
+      <section className="py-20 md:py-32 bg-[#141414] relative">
+        <BackgroundOrbital position="right" showOuterCurve={false} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
-              <span className="section-label text-[#29CD71]">03 — Security</span>
-              <h2 className="text-3xl md:text-5xl text-white mt-2 mb-8">Private file memory for your WhatsApp life.</h2>
-              <p className="text-gray-500 mb-8 font-light leading-relaxed text-lg">
-                Files stay in secure private storage with signed access links, consent tracking, deletion controls and safe retrieval.
+              <span className="section-label text-[#29CD71] bg-[#29CD71]/10 px-3 py-1 rounded-full text-[10px] md:text-xs">03 — Security</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 mb-6 md:mb-8 leading-tight">Private file memory for your WhatsApp life.</h2>
+              <p className="text-gray-300 mb-8 md:mb-10 font-normal leading-relaxed text-base md:text-lg">
+                Files stay in secure private storage with signed access links, consent tracking, deletion controls, and safe retrieval.
               </p>
 
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center gap-3">
-                  <iconify-icon icon="solar:check-circle-linear" className="text-[#B269EC] text-xl"></iconify-icon>
-                  <span className="text-white font-medium">Secure private storage</span>
+              <ul className="space-y-4 md:space-y-6 mb-8">
+                <li className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-white/5 rounded-2xl border border-white/10">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#29CD71]/10 flex items-center justify-center shrink-0">
+                    <iconify-icon icon="solar:shield-check-bold" className="text-[#29CD71] text-lg md:text-xl"></iconify-icon>
+                  </div>
+                  <span className="text-white font-medium text-base md:text-lg">Secure private storage</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <iconify-icon icon="solar:check-circle-linear" className="text-[#B269EC] text-xl"></iconify-icon>
-                  <span className="text-white font-medium">Signed download links</span>
+                <li className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-white/5 rounded-2xl border border-white/10">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#29CD71]/10 flex items-center justify-center shrink-0">
+                    <iconify-icon icon="solar:link-circle-bold" className="text-[#29CD71] text-lg md:text-xl"></iconify-icon>
+                  </div>
+                  <span className="text-white font-medium text-base md:text-lg">Signed download links</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <iconify-icon icon="solar:check-circle-linear" className="text-[#B269EC] text-xl"></iconify-icon>
-                  <span className="text-white font-medium">WhatsApp consent onboarding</span>
+                <li className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-white/5 rounded-2xl border border-white/10">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#29CD71]/10 flex items-center justify-center shrink-0">
+                    <iconify-icon icon="solar:user-check-bold" className="text-[#29CD71] text-lg md:text-xl"></iconify-icon>
+                  </div>
+                  <span className="text-white font-medium text-base md:text-lg">WhatsApp consent onboarding</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <iconify-icon icon="solar:check-circle-linear" className="text-[#B269EC] text-xl"></iconify-icon>
-                  <span className="text-white font-medium">Email OTP activation</span>
+                <li className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-white/5 rounded-2xl border border-white/10">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#29CD71]/10 flex items-center justify-center shrink-0">
+                    <iconify-icon icon="solar:letter-bold" className="text-[#29CD71] text-lg md:text-xl"></iconify-icon>
+                  </div>
+                  <span className="text-white font-medium text-base md:text-lg">Email OTP activation</span>
                 </li>
               </ul>
             </div>
@@ -359,43 +375,49 @@ export default function OnlineBusiness() {
         </div>
       </section>
 
+      {/* 5. PROBLEM SOLVER / CHAOS SECTION */}
+      <InteractiveProblemSection />
+
       {/* 6. READINESS SCORE CTA BAND */}
-      <section id="cta" className="py-20 bg-[#29CD71] text-[#1A1A1A] relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+      <section id="cta" className="py-20 md:py-24 bg-[#29CD71] text-[#141414] relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-3xl md:text-5xl font-sans font-medium mb-4 leading-tight tracking-widest">SawAap</h2>
-          <p className="text-xl text-[#1A1A1A]/90 mb-10 font-light max-w-2xl mx-auto">
-            Forward. Save. Get it.
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight tracking-tight">Ready to organize your WhatsApp?</h2>
+          <p className="text-lg md:text-2xl text-[#141414]/90 mb-8 md:mb-12 font-medium max-w-2xl mx-auto">
+            Join thousands of users who save time finding their files.
           </p>
-          <div className="flex flex-col items-center justify-center gap-3">
-            <a href="#" className="px-8 py-4 bg-[#1A1A1A] text-white rounded-full font-medium hover:bg-gray-100 transition-all shadow-lg flex items-center gap-3 transform hover:-translate-y-1">
-              <iconify-icon icon="mdi:whatsapp" className="text-2xl text-[#25D366]"></iconify-icon>
-              Chat with us
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4">
+            <a href="#get-started" className="w-full sm:w-auto px-6 py-4 md:px-10 md:py-5 bg-[#141414] text-white rounded-full font-bold hover:bg-black transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 transform hover:-translate-y-1 text-base md:text-lg">
+              Start for Free
+              <iconify-icon icon="solar:arrow-right-bold" className="text-xl"></iconify-icon>
             </a>
-            <span className="text-xs text-[#1A1A1A]/70 font-medium tracking-wide">WhatsApp is open</span>
+            <a href="#demo" className="w-full sm:w-auto px-6 py-4 md:px-10 md:py-5 bg-white/20 text-[#141414] border border-[#141414]/10 rounded-full font-bold hover:bg-white/30 transition-all shadow-md flex items-center justify-center gap-3 text-base md:text-lg">
+              <iconify-icon icon="mdi:whatsapp" className="text-2xl"></iconify-icon>
+              Chat on WhatsApp
+            </a>
           </div>
+          <p className="text-sm md:text-base text-[#141414]/90 font-semibold tracking-wide mt-6 md:mt-8">No credit card required. 14-day free trial.</p>
         </div>
       </section>
 
 
 
       {/* 10. FOOTER */}
-      <footer className="bg-white text-[#1A1A1A] pt-24 pb-12">
+      <footer className="bg-[#0A0A0A] text-white pt-24 pb-12 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 pb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 pb-16 border-b border-white/10">
             {/* Brand */}
             <div>
-              <div className="flex items-center gap-2 mb-6">
-                <img src="/logo.png" alt="SawAap Logo" className="w-8 h-8 object-contain" />
-                <span className="font-sans text-lg tracking-widest font-medium">SawAap</span>
+              <div className="flex items-center mb-6">
+                <img src="/logo-with-text.png" alt="SawAap Logo" className="w-36 md:w-48 h-auto object-contain" />
               </div>
-              <p className="text-[#1A1A1A]/60 text-sm mb-6 max-w-sm">Forward. Save. Get it.</p>
+              <p className="text-gray-400 text-sm mb-6 max-w-sm leading-relaxed">The smarter way to forward, save, and find WhatsApp files instantly with AI.</p>
             </div>
 
             {/* Product */}
             <div>
-              <h4 className="text-sm font-semibold text-[#1A1A1A] mb-6">Product</h4>
-              <ul className="space-y-4 text-sm text-[#1A1A1A]/60 font-light">
+              <h4 className="text-base font-semibold text-white mb-6">Product</h4>
+              <ul className="space-y-4 text-sm text-gray-400 font-light">
                 <li><a href="#" className="hover:text-[#29CD71] transition-colors">Features</a></li>
                 <li><a href="#how-it-works" className="hover:text-[#29CD71] transition-colors">How It Works</a></li>
                 <li><a href="#" className="hover:text-[#29CD71] transition-colors">Security</a></li>
@@ -406,8 +428,8 @@ export default function OnlineBusiness() {
 
             {/* Company */}
             <div>
-              <h4 className="text-sm font-semibold text-[#1A1A1A] mb-6">Company</h4>
-              <ul className="space-y-4 text-sm text-[#1A1A1A]/60 font-light">
+              <h4 className="text-base font-semibold text-white mb-6">Company</h4>
+              <ul className="space-y-4 text-sm text-gray-400 font-light">
                 <li><a href="#" className="hover:text-[#29CD71] transition-colors">About Us</a></li>
                 <li><a href="#" className="hover:text-[#29CD71] transition-colors">Privacy Policy</a></li>
                 <li><a href="#" className="hover:text-[#29CD71] transition-colors">Terms of Service</a></li>
@@ -417,22 +439,22 @@ export default function OnlineBusiness() {
 
             {/* Stay in the loop */}
             <div>
-              <h4 className="text-sm font-semibold text-[#1A1A1A] mb-6">Stay in the loop</h4>
-              <p className="text-[#1A1A1A]/60 text-sm font-light mb-6">Get updates on new features and productivity tips.</p>
+              <h4 className="text-base font-semibold text-white mb-6">Stay in the loop</h4>
+              <p className="text-gray-400 text-sm font-light mb-6">Get updates on new features and productivity tips.</p>
               <form className="mb-6 flex gap-2" onSubmit={(e) => e.preventDefault()}>
-                <input type="email" placeholder="Enter your email" required className="w-full bg-[#1A1A1A]/10 border border-[#1A1A1A]/20 rounded-lg px-4 py-2.5 text-sm text-[#1A1A1A] focus:outline-none focus:border-[#29CD71]" />
-                <button type="submit" className="bg-[#29CD71] text-[#1A1A1A] px-4 py-2.5 rounded-lg text-sm flex items-center justify-center hover:bg-[#20a359] transition-colors">
+                <input type="email" placeholder="Enter your email" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#29CD71] transition-colors" />
+                <button type="submit" className="bg-[#29CD71] text-[#141414] px-5 py-3 rounded-xl text-sm flex items-center justify-center hover:bg-[#23B061] transition-colors">
                   <iconify-icon icon="solar:arrow-right-linear" width="20"></iconify-icon>
                 </button>
               </form>
-              <p className="text-[#1A1A1A]/60 text-sm font-light flex items-center gap-2">
-                <iconify-icon icon="solar:letter-linear" className="text-xl"></iconify-icon>
-                Contact Us: <a href="mailto:info@sawaap.com" className="hover:text-[#29CD71] transition-colors">info@sawaap.com</a>
+              <p className="text-gray-400 text-sm font-light flex items-center gap-3">
+                <iconify-icon icon="solar:letter-bold" className="text-xl text-[#29CD71]"></iconify-icon>
+                Contact Us: <a href="mailto:info@sawaap.com" className="hover:text-[#29CD71] transition-colors text-white">info@sawaap.com</a>
               </p>
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#1A1A1A]/40 font-light">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500 font-light">
             <p>Sawaap is a software product owned and operated by Zpruners Innovations.</p>
             <p>© 2026 Sawaap. All rights reserved.</p>
           </div>

@@ -6,11 +6,11 @@
   --prairie-gold: #F59E0B; /* Warning/Action Gold */
   --calm-clay: #E5E7EB; /* Neutral Light Gray */
   --charcoal: white;
-  --fog-grey: #1A1A1A;
+  --fog-grey: #141414;
 }
 
 body {
-  font-family: 'TT Lakes Neue', sans-serif;
+  font-family: 'TT Lakes Neue', 'Inter', system-ui, -apple-system, sans-serif;
   color: var(--charcoal);
   background-color: var(--fog-grey);
   -webkit-font-smoothing: antialiased;
@@ -18,7 +18,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'TT Lakes Neue', sans-serif;
+  font-family: 'TT Lakes Neue', 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .bg-grid-pattern {
